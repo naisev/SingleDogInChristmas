@@ -1,0 +1,46 @@
+﻿<Window x:Class="SingleDogInChristmas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SingleDogInChristmas"
+        mc:Ignorable="d"
+        Title="单身狗在圣诞节仅存的快乐" Height="450" Width="800"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid>
+
+        <!--定义了3列-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--定义了两行-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="80*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" TextAlignment="Center" VerticalAlignment="Center"  Text="Cookie：" Name="LblCookie"/>
+        <TextBox Grid.Row="0" Grid.Column="1" 
+                 TextAlignment="Justify" Text="请输入Cookie" Name="TxtCookie" 
+                 GotFocus="TxtCookie_GotFocus" LostFocus="TxtCookie_LostFocus"
+                 TextWrapping="Wrap"
+                 AcceptsReturn="True"
+                 VerticalScrollBarVisibility="Visible"/>
+        <Button Grid.Row="0" Grid.Column="2" Name="BtnDebug" Content="开始&#13;抓取" Click="BtnDebug_Click" Margin="10,10,10,10" Height="Auto"></Button>
+        <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Name="DataGrid">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Time}" Header="时间"/>
+                <DataGridTextColumn Binding="{Binding Content}" Header="内容"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
