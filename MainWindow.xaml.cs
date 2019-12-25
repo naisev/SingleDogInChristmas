@@ -164,10 +164,10 @@ namespace SingleDogInChristmas
                new Action(
                     delegate
                     {
-                        GetWeiBoData();
+                        GetWeiBoData();//抓取数据
                     }
                )
-         );
+            );
         }
 
         private void BeginTimer()
